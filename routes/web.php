@@ -16,5 +16,8 @@ Route::get('/', function () {
 });
 
 Route::get('/hello-world', function () {
+    $product = new \App\Product();
+    $product->name = 'Product 01';
+    $product->save();
     return view('hello-world');
 });
