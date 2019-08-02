@@ -21,3 +21,9 @@ Route::get('/hello-world', function () {
     $product->save();
     return view('hello-world');
 });
+
+Route::get('/hi-world', function () {
+
+
+    return \App\Product::all();
+});
