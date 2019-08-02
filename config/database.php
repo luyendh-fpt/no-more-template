@@ -15,7 +15,7 @@ return [
     |
     */
 
-    'default' => 'mysql',
+    'default' => 'pgsql',
 
     /*
     |--------------------------------------------------------------------------
@@ -77,6 +77,20 @@ return [
             'schema' => 'public',
             'sslmode' => 'prefer',
         ],
+//        'pgsql' => [
+//            'driver' => 'pgsql',
+//            'url' => '',
+//            'host' => '127.0.0.1',
+//            'port' => '5432',
+//            'database' => 'hello-data',
+//            'username' => 'postgres',
+//            'password' => 'abcD1234',
+//            'charset' => 'utf8',
+//            'prefix' => '',
+//            'prefix_indexes' => true,
+//            'schema' => 'public',
+//            'sslmode' => 'prefer',
+//        ],
 
         'sqlsrv' => [
             'driver' => 'sqlsrv',
