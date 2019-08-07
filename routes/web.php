@@ -27,3 +27,13 @@ Route::get('/hi-world', function () {
 
     return \App\Product::all();
 });
+
+Route::resource('/game', 'GameController');
+
+Route::get('/admin/example/list', function (){
+    return view('example.list');
+});
+
+Route::get('/admin/example/form', function (){
+    return view('example.form');
+});
