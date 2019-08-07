@@ -6,7 +6,15 @@
             <small class="text-muted">Enter game information</small>
         </h3>
     </div>
-
+    @if ($errors->any())
+        <div class="text-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
     <div class="row">
         <div class="col-6">
             <form action="/game" method="post">

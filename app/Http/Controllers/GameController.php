@@ -38,6 +38,19 @@ class GameController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'name' => 'required|max:50|min:10',
+            'thumbnail' => 'required',
+            'price' => 'required'
+        ],
+            [
+                'name.required'=>'Vui lòng nhập tên trò chơi',
+                'name.min' => 'Tên quá ngắn, vui lòng nhập ít nhất 10 ký tự.',
+                'name.max' => 'Tên quá dài, vui lòng nhập nhiều nhất 50 ký tự.',
+                'thumbnail.required' => 'Vui lòng nhập ảnh cho trò chơi',
+                'price.required' => 'Vui lòng nhập giá cho sản phẩm'
+            ]);
+
         $game = new Game();
         $game->name = $request->get('name');
         $game->price = $request->get('price');
