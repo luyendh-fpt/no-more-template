@@ -72,7 +72,7 @@
         <div class="col-3">
             <div class="nav flex-column nav-pills">
                 <a class="nav-link active" href="#"><i class="fas fa-users"></i>&nbsp;&nbsp;Manage User</a>
-                <a class="nav-link" href="/admin/example/list"><i class="fas fa-gamepad"></i>&nbsp;&nbsp;Manage Game</a>
+                <a class="nav-link" href="/game"><i class="fas fa-gamepad"></i>&nbsp;&nbsp;Manage Game</a>
                 <a class="nav-link" href="#"><i class="fas fa-list"></i>&nbsp;&nbsp;Manage Category</a>
                 <a class="nav-link" href="#"><i class="fas fa-calculator"></i>&nbsp;&nbsp;Statistic</a>
             </div>

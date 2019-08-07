@@ -1,19 +1,77 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
-<h1>Game list</h1>
-<ul>
-    @foreach($list as $item)
-        <li>{{$item->name}} - ${{$item->price}} <a href="/game/{{$item->id}}">Details</a> &nbsp;&nbsp;<a href="{{ route('game.edit', $item->id) }}">Edit</a></li>
-    @endforeach
-</ul>
-    {{$list->links()}}
-</body>
-</html>
+@extends('layout.master')
+@section('content')
+    <div class="row">
+        <div class="col">
+            <h3 class="mb-3">
+                <i class="fas fa-stream"></i> List game
+                <small class="text-muted">All game availble</small>
+            </h3>
+            <a href="/game/create"><i class="fas fa-plus-square"></i>&nbsp;&nbsp;Add new</a>
+        </div>
+    </div>
+    <div class="row mb-2 mt-2">
+        <div class="col-7">
+        </div>
+        <div class="col-5">
+            <div class="form-group float-left mr-2">
+                <select class="form-control">
+                    <option>Category 01</option>
+                    <option>Category 01</option>
+                    <option>Category 01</option>
+                    <option>Category 01</option>
+                    <option>Category 01</option>
+                </select>
+            </div>
+            <div class="form-group float-left mr-2">
+                <input type="text" class="form-control mb-2 mr-sm-2" id="inlineFormInputName2" placeholder="Enter keyword to search">
+            </div>
+            <div class="form-group float-left">
+                <button type="submit" class="btn btn-outline-primary mb-2">Search</button>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col"><input type="checkbox" class="form-control"></th>
+                <th scope="col">Id</th>
+                <th scope="col">Name</th>
+                <th scope="col">Avatar</th>
+                <th scope="col">Price</th>
+            </tr>
+            </thead>
+            <tbody>
+            @foreach($list as $item)
+            <tr>
+                <th scope="row"><input type="checkbox" class="form-control"></th>
+                <td>{{$item->id}}</td>
+                <td>{{$item->name}}</td>
+                <td><img class="img-thumbnail rounded game-avatar" src="{{$item->thumbnail}}" alt="{{$item->name}}"></td>
+                <td>{{$item->price}}</td>
+            </tr>
+            @endforeach
+            </tbody>
+        </table>
+    </div>
+    <div class="row">
+        <div class="form-group mr-3">
+            <select class="form-control mr-2">
+                <option>Delete</option>
+                <option>Accept</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-outline-primary mb-2">Apply to all</button>
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="col-8"></div>
+        <div class="col-4">
+            <nav aria-label="Page navigation example">
+                {{$list->links()}}
+            </nav>
+        </div>
+    </div>
+@endsection

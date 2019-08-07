@@ -15,7 +15,7 @@ class GameController extends Controller
      */
     public function index()
     {
-        $list = Game::paginate(1);
+        $list = Game::paginate(10);
         $data = ['list' => $list];
         return view('game.list', $data);
     }
@@ -41,6 +41,7 @@ class GameController extends Controller
         $game = new Game();
         $game->name = $request->get('name');
         $game->price = $request->get('price');
+        $game->thumbnail = $request->get('thumbnail');
         $game->save();
         return redirect('/game');
     }
