@@ -2,8 +2,8 @@
 @section('content')
     <div class="row">
         <h3 class="mb-3">
-            <i class="fas fa-plus-square"></i> List game
-            <small class="text-muted">All game availble</small>
+            <i class="fas fa-plus-square"></i> Create new game
+            <small class="text-muted">Enter game information</small>
         </h3>
     </div>
 
@@ -11,17 +11,13 @@
         <div class="col-6">
             <form>
                 <div class="form-group">
-                    <label for="exampleInputEmail1">Email address</label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                    <label for="exampleInputEmail1">Name</label>
+                    <input type="email" class="form-control" placeholder="Please enter name">
                     <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
                 </div>
                 <div class="form-group">
-                    <label for="exampleInputPassword1">Password</label>
-                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-                </div>
-                <div class="form-group form-check">
-                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                    <label for="exampleInputPassword1">Price</label>
+                    <input type="number" class="form-control" placeholder="Please enter price">
                 </div>
                 <button type="submit" class="btn btn-primary">Submit</button>
             </form>

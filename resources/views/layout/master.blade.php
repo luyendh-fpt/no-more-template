@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="{{asset('css/app.css')}}">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.10.1/css/all.css">
+    <link rel="stylesheet" href="{{asset('css/custom.css')}}">
     <script src="{{asset('js/app.js')}}" ></script>
 
     <title>Document</title>
@@ -71,7 +72,7 @@
         <div class="col-3">
             <div class="nav flex-column nav-pills">
                 <a class="nav-link active" href="#"><i class="fas fa-users"></i>&nbsp;&nbsp;Manage User</a>
-                <a class="nav-link" href="#"><i class="fas fa-gamepad"></i>&nbsp;&nbsp;Manage Game</a>
+                <a class="nav-link" href="/admin/example/list"><i class="fas fa-gamepad"></i>&nbsp;&nbsp;Manage Game</a>
                 <a class="nav-link" href="#"><i class="fas fa-list"></i>&nbsp;&nbsp;Manage Category</a>
                 <a class="nav-link" href="#"><i class="fas fa-calculator"></i>&nbsp;&nbsp;Statistic</a>
             </div>
