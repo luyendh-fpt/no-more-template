@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Game;
+use App\Http\Requests\GameValidation;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
 
@@ -36,20 +37,9 @@ class GameController extends Controller
      * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(GameValidation $request)
     {
-        $request->validate([
-            'name' => 'required|max:50|min:10',
-            'thumbnail' => 'required',
-            'price' => 'required'
-        ],
-            [
-                'name.required'=>'Vui lòng nhập tên trò chơi',
-                'name.min' => 'Tên quá ngắn, vui lòng nhập ít nhất 10 ký tự.',
-                'name.max' => 'Tên quá dài, vui lòng nhập nhiều nhất 50 ký tự.',
-                'thumbnail.required' => 'Vui lòng nhập ảnh cho trò chơi',
-                'price.required' => 'Vui lòng nhập giá cho sản phẩm'
-            ]);
+        $request->validated();
 
         $game = new Game();
         $game->name = $request->get('name');
@@ -93,12 +83,13 @@ class GameController extends Controller
      * @param int $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(GameValidation $request, $id)
     {
-        //
         $game = Game::find($id);
+        $request->validated();
         $game->name = $request->get('name');
         $game->price = $request->get('price');
+        $game->thumbnail = $request->get('thumbnail');
         $game->save();
         return redirect('/game');
     }
@@ -111,6 +102,8 @@ class GameController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $game = Game::find($id);
+        $game->delete();
+        return redirect('/game');
     }
 }

@@ -23,7 +23,8 @@
                 </select>
             </div>
             <div class="form-group float-left mr-2">
-                <input type="text" class="form-control mb-2 mr-sm-2" id="inlineFormInputName2" placeholder="Enter keyword to search">
+                <input type="text" class="form-control mb-2 mr-sm-2" id="inlineFormInputName2"
+                       placeholder="Enter keyword to search">
             </div>
             <div class="form-group float-left">
                 <button type="submit" class="btn btn-outline-primary mb-2">Search</button>
@@ -36,20 +37,31 @@
             <tr>
                 <th scope="col"><input type="checkbox" class="form-control"></th>
                 <th scope="col">Id</th>
-                <th scope="col">Name</th>
                 <th scope="col">Avatar</th>
+                <th scope="col">Name</th>
                 <th scope="col">Price</th>
+                <th scope="col">Action</th>
             </tr>
             </thead>
             <tbody>
             @foreach($list as $item)
-            <tr>
-                <th scope="row"><input type="checkbox" class="form-control"></th>
-                <td>{{$item->id}}</td>
-                <td>{{$item->name}}</td>
-                <td><img class="img-thumbnail rounded game-avatar" src="{{$item->thumbnail}}" alt="{{$item->name}}"></td>
-                <td>{{$item->price}}</td>
-            </tr>
+                <tr>
+                    <th scope="row"><input type="checkbox" class="form-control"></th>
+                    <td>{{$item->id}}</td>
+                    <td><img class="img-thumbnail rounded game-avatar" src="{{$item->thumbnail}}" alt="{{$item->name}}">
+                    </td>
+                    <td>{{$item->name}}</td>
+                    <td>{{$item->price}}</td>
+                    <td>
+                        <a href="/game/{{$item->id}}" class="mr-2" title="View game detail">Detail</a>
+                        <a href="/game/{{$item->id}}/edit" class="mr-2" title="Edit this game">Edit</a>
+                        <form action="{{ route('game.destroy', $item->id) }}" method="POST">
+                            {{ method_field('DELETE') }}
+                            {{ csrf_field() }}
+                            <button class="mr-2" title="Delete this game">Delete</button>
+                        </form>
+                    </td>
+                </tr>
             @endforeach
             </tbody>
         </table>
