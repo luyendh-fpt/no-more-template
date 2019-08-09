@@ -55,11 +55,7 @@
                     <td>
                         <a href="/game/{{$item->id}}" class="mr-2" title="View game detail">Detail</a>
                         <a href="/game/{{$item->id}}/edit" class="mr-2" title="Edit this game">Edit</a>
-                        <form action="{{ route('game.destroy', $item->id) }}" method="POST">
-                            {{ method_field('DELETE') }}
-                            {{ csrf_field() }}
-                            <button class="mr-2" title="Delete this game">Delete</button>
-                        </form>
+                        <a href="javascript:void(0)" id="btn-delete-{{$item->id}}" class="mr-2 btn-delete" title="Delete this game">Delete</a>
                     </td>
                 </tr>
             @endforeach

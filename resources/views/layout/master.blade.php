@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.10.1/css/all.css">
     <link rel="stylesheet" href="{{asset('css/custom.css')}}">
     <script src="{{asset('js/app.js')}}" ></script>
+    <script src="{{asset('js/custom.js')}}" ></script>
 
     <title>Document</title>
 </head>

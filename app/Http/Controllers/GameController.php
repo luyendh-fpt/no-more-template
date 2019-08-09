@@ -102,8 +102,15 @@ class GameController extends Controller
      */
     public function destroy($id)
     {
+        error_log('Some message here.');
         $game = Game::find($id);
         $game->delete();
+        return response()->json(['status' => '200', 'message' => 'Okie']);
+    }
+
+    public function destroyMany(Request $request)
+    {
+        Game::whereIn('id', $request->input('ids'))->delete();
         return redirect('/game');
     }
 }
