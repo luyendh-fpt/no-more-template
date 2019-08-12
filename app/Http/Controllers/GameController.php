@@ -16,7 +16,7 @@ class GameController extends Controller
      */
     public function index()
     {
-        $list = Game::paginate(10);
+        $list = Game::whereNotIn('status', [-1])->paginate(10);
         $data = ['list' => $list];
         return view('game.list', $data);
     }
@@ -108,9 +108,12 @@ class GameController extends Controller
         return response()->json(['status' => '200', 'message' => 'Okie']);
     }
 
-    public function destroyMany(Request $request)
+    public function changeStatus(Request $request)
     {
-        Game::whereIn('id', $request->input('ids'))->delete();
-        return redirect('/game');
+        $listItem = Game::whereIn('id', $request->input('ids'));
+        $listItem->update(array(
+            'status' => (int)$request->input('status'),
+            'updated_at' => date('Y-m-d H:i:s')));
+        return response()->json(['status' => '200', 'message' => 'Good']);
     }
 }

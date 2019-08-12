@@ -29,7 +29,7 @@ Route::get('/hi-world', function () {
 });
 
 Route::resource('/game', 'GameController');
-Route::post('/game/delete-many', 'GameController@destroyMany');
+Route::post('/game/change-status', 'GameController@changeStatus');
 
 Route::get('/admin/example/list', function (){
     return view('example.list');

@@ -118,5 +118,6 @@ class GameSeeder extends Seeder
                 'updated_at' => date('Y-m-d H:i:s')
             ]
         ]);
+        \Illuminate\Support\Facades\DB::statement("ALTER SEQUENCE games_id_seq RESTART 14");
     }
 }

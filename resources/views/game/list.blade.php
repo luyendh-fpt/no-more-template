@@ -35,7 +35,9 @@
         <table class="table">
             <thead>
             <tr>
-                <th scope="col"><input type="checkbox" class="form-control"></th>
+                <th scope="col">
+                    <input type="checkbox" id="check-all">
+                </th>
                 <th scope="col">Id</th>
                 <th scope="col">Avatar</th>
                 <th scope="col">Name</th>
@@ -46,7 +48,9 @@
             <tbody>
             @foreach($list as $item)
                 <tr>
-                    <th scope="row"><input type="checkbox" class="form-control"></th>
+                    <th scope="row">
+                        <input type="checkbox" class="check-item" value="{{$item->id}}">
+                    </th>
                     <td>{{$item->id}}</td>
                     <td><img class="img-thumbnail rounded game-avatar" src="{{$item->thumbnail}}" alt="{{$item->name}}">
                     </td>
@@ -64,13 +68,14 @@
     </div>
     <div class="row">
         <div class="form-group mr-3">
-            <select class="form-control mr-2">
-                <option>Delete</option>
-                <option>Accept</option>
+            <select class="form-control mr-2" id="select-action">
+                <option value="0">--Chọn thao tác--</option>
+                <option value="-1">Xoá</option>
+                <option value="1">Phát hành</option>
             </select>
         </div>
         <div class="form-group">
-            <button type="submit" class="btn btn-outline-primary mb-2">Apply to all</button>
+            <button type="button" class="btn btn-outline-primary mb-2" id="btn-apply-all">Apply to all</button>
         </div>
 
     </div>
