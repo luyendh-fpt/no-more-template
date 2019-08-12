@@ -68,6 +68,21 @@ $(document).ready(function () {
             changeStatus(arrayId, action);
         }
     });
+
+    $('.btn-edit').click(function () {
+        var editId = $(this).attr('id').replace('btn-edit-', '');
+        $.ajax({
+            url: '/game/get-by-id/' + editId,
+            method: 'GET',
+            success: function (response) {
+                $('input[name="name"]').val(response.data.name);
+                $('#exampleModal').modal('show');
+            },
+            error: function () {
+                alert('Error');
+            }
+        });
+    });
 });
 
 function changeStatus(arrayId, status) {

@@ -62,6 +62,12 @@ class GameController extends Controller
         return view('game.detail', $data);
     }
 
+    public function getById($id)
+    {
+        $game = Game::find($id);
+        return response()->json(['status' => '200', 'message' => 'Okie', 'data' => $game]);
+    }
+
     /**
      * Show the form for editing the specified resource.
      *

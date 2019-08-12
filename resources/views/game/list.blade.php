@@ -58,7 +58,7 @@
                     <td>{{$item->price}}</td>
                     <td>
                         <a href="/game/{{$item->id}}" class="mr-2" title="View game detail">Detail</a>
-                        <a href="/game/{{$item->id}}/edit" class="mr-2" title="Edit this game">Edit</a>
+                        <a href="javascript:void(0)" id="btn-edit-{{$item->id}}" class="mr-2 btn-edit" title="Edit this game">Edit</a>
                         <a href="javascript:void(0)" id="btn-delete-{{$item->id}}" class="mr-2 btn-delete" title="Delete this game">Delete</a>
                     </td>
                 </tr>
@@ -85,6 +85,31 @@
             <nav aria-label="Page navigation example">
                 {{$list->links()}}
             </nav>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label>Name</label>
+                        <input type="text" class="form-control" name="name">
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
         </div>
     </div>
 @endsection
