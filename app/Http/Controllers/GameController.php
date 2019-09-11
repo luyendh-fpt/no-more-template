@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Category;
 use App\Game;
 use App\Http\Requests\GameValidation;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
+use Illuminate\Support\Facades\Input;
 
 class GameController extends Controller
 {
@@ -14,10 +16,20 @@ class GameController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $list = Game::whereNotIn('status', [-1])->paginate(10);
-        $data = ['list' => $list];
+        $list = Game::orderBy('created_at', 'desc')
+            ->where('name', 'like', '%' . $request->get('keyword') . '%')
+            ->where('category_id', $request->get('category_id'))
+            ->whereNotIn('status', [-1])
+            ->paginate(2);
+        $data = [
+            'list' => $list->appends(Input::except('page')),
+            'currentPage' => $request->get('page'),
+            'currentCategoryId' => $request->get('category_id'),
+            'currentKeyword' => $request->get('keyword'),
+            'categories' => Category::all()
+        ];
         return view('game.list', $data);
     }
 

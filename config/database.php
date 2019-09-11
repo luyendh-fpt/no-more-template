@@ -88,7 +88,7 @@ return [
             'charset' => 'utf8',
             'prefix' => '',
             'prefix_indexes' => true,
-            'schema' => 'public',
+            's  chema' => 'public',
             'sslmode' => 'prefer',
         ],
 

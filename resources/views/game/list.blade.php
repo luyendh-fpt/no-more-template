@@ -10,24 +10,23 @@
         </div>
     </div>
     <div class="row mb-2 mt-2">
-        <div class="col-7">
+        <div class="col-6">
         </div>
-        <div class="col-5">
+        <div class="col-6">
             <div class="form-group float-left mr-2">
-                <select class="form-control">
-                    <option>Category 01</option>
-                    <option>Category 01</option>
-                    <option>Category 01</option>
-                    <option>Category 01</option>
-                    <option>Category 01</option>
+                <select name="categoryId" class="form-control">
+                    @foreach($categories as $category)
+                        <option value="{{$category->id}}" {{($currentCategoryId == $category->id) ? 'selected':''}}>{{$category->name}}</option>
+                    @endforeach
                 </select>
             </div>
             <div class="form-group float-left mr-2">
-                <input type="text" class="form-control mb-2 mr-sm-2" id="inlineFormInputName2"
-                       placeholder="Enter keyword to search">
+                <input type="text" class="form-control mb-2 mr-sm-2" name="keyword"
+                       placeholder="Enter keyword to search" value="{{$currentKeyword}}">
+                <input type="hidden" name="currentPage" value="{{$currentPage}}">
             </div>
             <div class="form-group float-left">
-                <button type="submit" class="btn btn-outline-primary mb-2">Search</button>
+                <button type="submit" id="btn-search" class="btn btn-outline-primary mb-2">Search</button>
             </div>
         </div>
     </div>

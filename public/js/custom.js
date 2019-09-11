@@ -18,6 +18,7 @@
 //         alert("112");
 //     }
 // });
+var BASE_URL = 'http://127.0.0.1:8000';
 
 $(document).ready(function () {
 
@@ -82,6 +83,13 @@ $(document).ready(function () {
                 alert('Error');
             }
         });
+    });
+
+    $('#btn-search').click(function () {
+        var page = $('input[name="currentPage"]').val();
+        var categoryId = $('select[name="categoryId"]').val();
+        var keyword = $('input[name="keyword"]').val();
+        location.href = `${BASE_URL}/game?page=${page}&category_id=${categoryId}&keyword=${keyword}`;
     });
 });
 
