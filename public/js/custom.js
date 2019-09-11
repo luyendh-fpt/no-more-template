@@ -91,6 +91,38 @@ $(document).ready(function () {
         var keyword = $('input[name="keyword"]').val();
         location.href = `${BASE_URL}/game?page=${page}&category_id=${categoryId}&keyword=${keyword}`;
     });
+    $('#btn-home-search').click(function () {
+        var page = $('input[name="currentPage"]').val();
+        var categoryId = $('select[name="categoryId"]').val();
+        var keyword = $('input[name="keyword"]').val();
+        location.href = `${BASE_URL}/home?page=${page}&category_id=${categoryId}&keyword=${keyword}`;
+    });
+
+    $('.add-cart').click(function () {
+        var shoppingCart = {};
+        if (localStorage.getItem('shopping-cart') !== null) {
+            shoppingCart = JSON.parse(localStorage.getItem('shopping-cart'));
+        }
+        var id = $(this).attr('data-id');
+        var price = $(this).attr('data-price');
+        var name = $(this).attr('data-name');
+        var thumbnail = $(this).attr('data-thumbnail');
+        var cartItem = {
+            'id': id,
+            'name': name,
+            'price': price,
+            'thumbnail': thumbnail,
+            'quantity': 1
+        };
+        if (shoppingCart[id] != null) {
+            var existCartItem = shoppingCart[id];
+            cartItem = existCartItem;
+            cartItem.quantity++;
+        }
+        shoppingCart[id] = cartItem;
+        localStorage.setItem('shopping-cart', JSON.stringify(shoppingCart));
+        alert('Add cart item success!');
+    });
 });
 
 function changeStatus(arrayId, status) {

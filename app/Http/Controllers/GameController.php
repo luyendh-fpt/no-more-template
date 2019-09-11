@@ -18,13 +18,16 @@ class GameController extends Controller
      */
     public function index(Request $request)
     {
-        $list = Game::orderBy('created_at', 'desc')
-            ->where('name', 'like', '%' . $request->get('keyword') . '%')
-            ->where('category_id', $request->get('category_id'))
-            ->whereNotIn('status', [-1])
-            ->paginate(2);
+        $games = Game::orderBy('created_at', 'desc')->whereNotIn('status', [-1]);
+        if (Input::get('keyword')) {
+            $games = $games->where('name', 'like', '%' . $request->get('keyword') . '%');
+        }
+        if (Input::get('category_id')) {
+            $games = $games->where('category_id', $request->get('category_id'));
+        }
+        $games = $games->paginate(4);
         $data = [
-            'list' => $list->appends(Input::except('page')),
+            'list' => $games->appends(Input::except('page')),
             'currentPage' => $request->get('page'),
             'currentCategoryId' => $request->get('category_id'),
             'currentKeyword' => $request->get('keyword'),

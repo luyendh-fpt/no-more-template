@@ -28,6 +28,8 @@ Route::get('/hi-world', function () {
     return \App\Product::all();
 });
 
+Route::get('/home', 'HomeController@index');
+Route::get('/cart', 'HomeController@cart');
 Route::resource('/game', 'GameController');
 Route::post('/game/change-status', 'GameController@changeStatus');
 Route::get('/game/get-by-id/{id}', 'GameController@getById');

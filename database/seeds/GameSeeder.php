@@ -26,7 +26,7 @@ class GameSeeder extends Seeder
                 'id' => 2,
                 'category_id' => 1,
                 'name' => 'Counter Strike 7.0',
-                'price' => 0,
+                'price' => 20,
                 'thumbnail' => 'https://media.moddb.com/images/downloads/1/12/11076/splash.jpg',
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s')
@@ -35,7 +35,7 @@ class GameSeeder extends Seeder
                 'id' => 3,
                 'category_id' => 2,
                 'name' => 'Brave Blades',
-                'price' => 0,
+                'price' => 250,
                 'thumbnail' => 'http://2game.vn/imgstore/pictures/2game/2019/07/26/BraveBlades-3.jpg',
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s')
@@ -44,7 +44,7 @@ class GameSeeder extends Seeder
                 'id' => 4,
                 'category_id' => 1,
                 'name' => 'Lunathorn',
-                'price' => 0,
+                'price' => 150,
                 'thumbnail' => 'http://2game.vn/imgstore/pictures/2game/2019/07/27/Lunathorn-HA-3.jpg',
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s')
@@ -53,7 +53,7 @@ class GameSeeder extends Seeder
                 'id' => 5,
                 'category_id' => 1,
                 'name' => 'Perfect World Mobile: Thế Giới Hoàn Mỹ Mobile',
-                'price' => 0,
+                'price' => 50,
                 'thumbnail' => 'http://2game.vn/imgstore/pictures/2game/2019/07/25/2game-the-gioi-hoan-my-mobile-eng-2.jpg',
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s')
@@ -62,7 +62,7 @@ class GameSeeder extends Seeder
                 'id' => 6,
                 'category_id' => 3,
                 'name' => 'Dragon Raja: Long Tộc Huyễn Tưởng',
-                'price' => 0,
+                'price' => 400,
                 'thumbnail' => 'http://2game.vn/imgstore/pictures/2game/2019/07/20/2game-Dragon-Raja-mobile-anh-dep-5.jpg',
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s')
@@ -71,7 +71,7 @@ class GameSeeder extends Seeder
                 'id' => 7,
                 'category_id' => 4,
                 'name' => 'Luna’s Fate',
-                'price' => 0,
+                'price' => 500,
                 'thumbnail' => 'http://2game.vn/imgstore/pictures/2game/2019/07/10/LunaFate-4.jpg',
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s')
@@ -80,7 +80,7 @@ class GameSeeder extends Seeder
                 'id' => 8,
                 'category_id' => 5,
                 'name' => 'Avabel Lupinus',
-                'price' => 0,
+                'price' => 320,
                 'thumbnail' => 'http://2game.vn/imgstore/pictures/2game/2019/07/31/AvabelLupinus-2.jpg',
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s')
@@ -89,7 +89,7 @@ class GameSeeder extends Seeder
                 'id' => 9,
                 'category_id' => 6,
                 'name' => 'Pixel Knights Online',
-                'price' => 0,
+                'price' => 120,
                 'thumbnail' => 'http://2game.vn/imgstore/pictures/2game/2019/07/24/pixel-knight-online-3.jpg',
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s')
@@ -98,7 +98,7 @@ class GameSeeder extends Seeder
                 'id' => 10,
                 'category_id' => 2,
                 'name' => 'Rappelz Mobile',
-                'price' => 0,
+                'price' => 220,
                 'thumbnail' => 'http://2game.vn/imgstore/pictures/2game/2019/07/29/Rappelz-3.jpg',
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s')
@@ -107,7 +107,7 @@ class GameSeeder extends Seeder
                 'id' => 11,
                 'category_id' => 2,
                 'name' => 'Đỉnh Phong Tam Quốc',
-                'price' => 0,
+                'price' => 700,
                 'thumbnail' => 'http://2game.vn/imgstore/pictures/2game/2019/07/31/2game-dinh-phong-tam-quoc-mobile-hinh-anh-dep-3.jpg',
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s')
@@ -116,7 +116,7 @@ class GameSeeder extends Seeder
                 'id' => 12,
                 'category_id' => 3,
                 'name' => 'Blade Of God',
-                'price' => 0,
+                'price' => 560,
                 'thumbnail' => 'http://2game.vn/imgstore/pictures/2game/2019/08/07/BladeofGod-2.jpg',
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s')
@@ -125,7 +125,7 @@ class GameSeeder extends Seeder
                 'id' => 13,
                 'category_id' => 1,
                 'name' => 'Witch’s Weapon',
-                'price' => 0,
+                'price' => 660,
                 'thumbnail' => 'http://2game.vn/imgstore/pictures/2game/2019/07/24/WitchWeapon-1.jpg',
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s')
